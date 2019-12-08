@@ -36,6 +36,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         landmarkImages.append(UIImage(named:"stonehenge")!)
         landmarkImages.append(UIImage(named:"tajmahal")!)
         
+        navigationItem.title = "Landmark Book"
+        
         
     }
     
