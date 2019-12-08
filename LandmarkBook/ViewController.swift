@@ -14,9 +14,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        var landmarkNames = [String]()
+        landmarkNames.append("Colosseum")
+        landmarkNames.append("Great Wall")
+        landmarkNames.append("Kremlin")
+        landmarkNames.append("Stonehenge")
+        landmarkNames.append("Taj Mahal")
+        
+        var landmarkImages = [UIImage]()
+        landmarkImages.append(UIImage(named:"colosseum")!)
+        landmarkImages.append(UIImage(named:"greatwall")!)
+        landmarkImages.append(UIImage(named:"kremlin")!)
+        landmarkImages.append(UIImage(named:"stonehenge")!)
+        landmarkImages.append(UIImage(named:"tajmahal")!)
+        
+        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
