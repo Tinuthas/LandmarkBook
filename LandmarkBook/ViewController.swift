@@ -55,6 +55,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return landmarkNames.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toImageViewController", sender: nil)
+    }
+    
     
 
 }
