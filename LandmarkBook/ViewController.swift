@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
      var landmarkNames = [String]()
      var landmarkImages = [UIImage]()
+    var chosenLandmarkName = ""
+    var chosenLankmarkImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +58,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenLandmarkName = landmarkNames[indexPath.row]
+        chosenLankmarkImage = landmarkImages[indexPath.row]
         performSegue(withIdentifier: "toImageViewController", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toImageViewController" {
+            let destinationVC = segue.destination as! ImageViewController
+            destinationVC.selectedLandmarkName = chosenLandmarkName
+            destinationVC.selectedLandmarkImage = chosenLankmarkImage
+        }
     }
     
     
